@@ -1,5 +1,4 @@
-## Test2
-
+# Test2
 ```mermaid
 mindmap
  root((Snowflake))
@@ -8,6 +7,7 @@ mindmap
       The built-in roles can NOT be dropped.
       The default privileges provided to the built-in roles can NOT be revoked.
       The ORGADMIN role performs organization-specific tasks like listing all accounts and creating new ones. ORGADMIN can also delete accounts if required.
+      ACCOUNTADMIN is the only role with the privileges required to **create & manage a share** because managing Share is an account-level activity.
   Time Travel
     Minimal editaion is Enterprise
   Data and License
@@ -31,10 +31,8 @@ mindmap
       Snowflake credits are billed per second; however, a minimum of 60 seconds of billing applies
     Functionality
       The Enterprise edition has several additional capabilities not provided in the Standard edition. These include **multi-cluster virtual warehouses, column-level masking, row access policies, materialized views, and search optimization.**
-      ACCOUNTADMIN is the only role with the privileges required to **create & manage a share** because managing Share is an account-level activity.
     Cluster
-      The following indicators can help determine if a clustering key may be needed. · The table has large volumes of data (e.g., multiple terabytes) · Queries on the table are running slower than expected. · Query performance has gotten worse over time. · The table has a large clustering depth
-
+      The following indicators can help determine if a clustering key may be needed. The table has large volumes of data, e.g. multiple terabytes Queries on the table are running slower than expected. Query performance has gotten worse over time.The table has a large clustering depth
   Tasks
     Compute
       The largest compute size available for serverless tasks is equivalent to the capacity of an XXLARGE or 2X-Large user-managed virtual warehouse.
@@ -48,7 +46,7 @@ mindmap
       can be created on an external table to improve performance.
     Search optimization service 
       can be used to improve the performance of point lookup queries that return only one or a few rows, using highly selective filters using equality predicates or IN predicates.
-      The search optimization service in Snowflake is similar to the **secondary index** concept in typical databases.
+      in Snowflake is similar to the **secondary index** concept in typical databases.
   Data Loading and Unloading
     Command
       Put: uploads data from an on-premises system to an internal stage.
@@ -60,11 +58,10 @@ mindmap
   Account Usage & Monitoring
     Information Schema
       Typical data retention in INFORMATION SCHEMA is 14 days but can be seven days for specific views and up to 6 months for usage history views.
-      Data provided by the ACCOUNT_USAGE views is NOT real-time and refreshes typically with a lag of **45 minutes to 3 hours**
   Extending Snowflake Functionality
+      Data provided by the ACCOUNT_USAGE views is NOT real-time and refreshes typically with a lag of **45 minutes to 3 hours**
     Secure UDF
       SQL UDFs should be created as secure if their purpose is to protect data, such as views that limit the rows returned to the user or the columns.
 
 
 ```
-
